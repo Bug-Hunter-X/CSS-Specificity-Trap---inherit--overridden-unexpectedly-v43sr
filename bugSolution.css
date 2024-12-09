@@ -1,0 +1,21 @@
+The solution is to either remove the conflicting style `div p { color: green; }` or modify the selectors to correctly apply inheritance:
+
+**Solution 1: Remove conflicting style:**
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: inherit; /* Now this will work, inheriting blue */
+}
+```
+
+**Solution 2: Adjust specificity (if removing is not an option):**
+
+If you need the `div p { color: green; }` style for other reasons, you can adjust the specificity of the `inherit` style.  This might involve creating a more specific selector that targets the paragraph with the desired inheritance.  The specific adjustment depends on the context and overall CSS structure.
